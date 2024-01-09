@@ -39,9 +39,16 @@ public static class ExtensionsNode
         return default;
     }
 
+    public static void SafeAddChild(this Node parent, Node child) {
+        if (parent.IsNodeReady())
+            parent.AddChild(child);
+        else
+            parent.CallDeferred(Node.MethodName.AddChild, child);
+    }
+
     public static Node GetAncestor(this Node node, int generations) {
         for (int i = 0; i < generations; i++)
-			node = node.GetParent();
+            node = node.GetParent();
         return node;
     }
 }

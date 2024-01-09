@@ -11,7 +11,7 @@ public partial class Singleton<T> : Node where T : Singleton<T>
     public static T Instance {
         get {
             if (instance == null) {
-				Window root = (Godot.Engine.GetMainLoop() as SceneTree).Root;
+                Window root = (Godot.Engine.GetMainLoop() as SceneTree).Root;
                 T[] managers = root.GetComponentsInChildren<T>(false);
                 if (managers.Length != 0) {
                     if (managers.Length == 1) {
@@ -26,7 +26,7 @@ public partial class Singleton<T> : Node where T : Singleton<T>
                     }
                 }
                 T _instance = (T)Activator.CreateInstance(typeof(T));
-				root.SafeAddChild(_instance);
+                root.SafeAddChild(_instance);
                 instance = _instance;
             }
             return instance;

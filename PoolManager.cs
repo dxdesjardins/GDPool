@@ -22,19 +22,19 @@ public partial class PoolManager : Singleton<PoolManager>
     }
 
     public Node GetObj(PackedScene packedScene, out bool isRecycled) {
-		bool createdPool = false;
-		if (!packedLookup.ContainsKey(packedScene)) {
-			WarmObjects(packedScene, 1);
-			createdPool = true;
-		}
-		var pool = packedLookup[packedScene];
-		var clone = pool.GetItem(out isRecycled);
-		if (isRecycled)
-			instanceLookup.Add(clone, pool);
-		if (createdPool)
-			isRecycled = false;
-		return clone;
-	}
+        bool createdPool = false;
+        if (!packedLookup.ContainsKey(packedScene)) {
+            WarmObjects(packedScene, 1);
+            createdPool = true;
+        }
+        var pool = packedLookup[packedScene];
+        var clone = pool.GetItem(out isRecycled);
+        if (isRecycled)
+            instanceLookup.Add(clone, pool);
+        if (createdPool)
+            isRecycled = false;
+        return clone;
+    }
 
     public Node SpawnObj(PackedScene packedScene, Node parent, out bool isRecycled) {
         return SpawnObj(packedScene, parent, Vector2.Zero, 0f, out isRecycled);
@@ -56,13 +56,13 @@ public partial class PoolManager : Singleton<PoolManager>
 
     public bool AddObj(Node clone) {
         foreach (KeyValuePair<PackedScene, ObjectPool<Node>> keyVal in packedLookup) {
-			if (keyVal.Key.ResourcePath == clone.SceneFilePath) {
+            if (keyVal.Key.ResourcePath == clone.SceneFilePath) {
                 var objectPool = keyVal.Value;
-				objectPool.AddItem(clone);
-				return true;
+                objectPool.AddItem(clone);
+                return true;
             }
-		}
-		return false;
+        }
+        return false;
     }
 
     public bool ReleaseObj(Node clone) {
@@ -112,8 +112,8 @@ public partial class PoolManager : Singleton<PoolManager>
     }
 
     public static Node GetObject(PackedScene packedScene, out bool isRecycled) {
-		return Instance.GetObj(packedScene, out isRecycled);
-	}
+        return Instance.GetObj(packedScene, out isRecycled);
+    }
 
     #endregion
 }

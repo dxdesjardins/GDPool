@@ -67,16 +67,16 @@ public class ObjectPool<T> where T : class
         return container.Item;
     }
 
-	public void AddItem(T item) {
-		if (lookup.ContainsKey(item))
-			GD.PrintErr("This object pool already contains the item provided: " + item);
-		else if (maxSize == -1 || list.Count < maxSize) {
-			var container = CreateConatiner();
-			container.Item = item;
-		}
-	}
+    public void AddItem(T item) {
+        if (lookup.ContainsKey(item))
+            GD.PrintErr("This object pool already contains the item provided: " + item);
+        else if (maxSize == -1 || list.Count < maxSize) {
+            var container = CreateConatiner();
+            container.Item = item;
+        }
+    }
 
-	public void ReleaseItem(object item) {
+    public void ReleaseItem(object item) {
         ReleaseItem((T)item);
     }
 
