@@ -2,10 +2,13 @@ GDPool
 =================
 
 Object Pool Manager for the Godot Game Engine.
-Written for 2D games; slight modifications will be needed for 3D games.
 
 Reimplemented and improved upon upon from a Unity Engine MIT Project:
 https://github.com/thefuntastic/unity-object-pool
+
+An object pool provides an efficient way to reuse objects, and thus keep the memory foot print of all dynamically created objects within fixed bounds. This is crucial for maintianing consistent framerates in realtime games (especially on mobile), as frequent garbage collection spikes would likley lead to inconsistent performance.
+
+Written for 2D games; slight modifications will be needed for 3D games.
 
 ```csharp
 // Initialize a pool of ten sceneObjects. The pool will have a maximum size of 15 objects (setting a max pool size is optional).
