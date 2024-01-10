@@ -24,21 +24,6 @@ public static class ExtensionsNode
         return components.ToArray();
     }
 
-    public static T GetComponentInChildren<T>(this Node node, bool isChild = true, bool includeParent = true) {
-        if (isChild)
-            node = node.GetParent() ?? node;
-        if (includeParent && node is T parent)
-            return parent;
-        if (node != null) {
-            foreach (Node i in node.GetChildren(true)) {
-                foreach (Node j in i.GetComponentsInChildren(false, true))
-                    if (j is T component)
-                        return component;
-            }
-        }
-        return default;
-    }
-
     public static void SafeAddChild(this Node parent, Node child) {
         if (parent.IsNodeReady())
             parent.AddChild(child);
