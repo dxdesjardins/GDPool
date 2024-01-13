@@ -54,6 +54,16 @@ public partial class PoolManager : Singleton<PoolManager>
         return clone;
     }
 
+    public Node SpawnObj(PackedScene packedScene, Node parent, Vector3 position, Vector3 rotation, out bool isRecycled) {
+        Node clone = GetObj(packedScene, out isRecycled);
+        if (clone is Node3D node3D) {
+            node3D.Position = position;
+            node3D.Rotation = rotation;
+        }
+        parent.AddChild(clone);
+        return clone;
+    }
+
     public bool AddObj(Node clone) {
         foreach (KeyValuePair<PackedScene, ObjectPool<Node>> keyVal in packedLookup) {
             if (keyVal.Key.ResourcePath == clone.SceneFilePath) {
@@ -81,8 +91,22 @@ public partial class PoolManager : Singleton<PoolManager>
 
     #region Static API
 
-    public static void WarmObjects(PackedScene packedScene, int size, int maxSize = -1  ) {
+    public static void WarmObjects(PackedScene packedScene, int size, int maxSize = -1) {
         Instance.WarmObjs(packedScene, size, maxSize);
+    }
+
+    public static bool AddObject(Node clone) {
+        return Instance.AddObj(clone);
+    }
+
+    public static bool ReleaseObject(Node clone) {
+        if (!closingGame)
+            return Instance.ReleaseObj(clone);
+        return false;
+    }
+
+    public static Node GetObject(PackedScene packedScene, out bool isRecycled) {
+        return Instance.GetObj(packedScene, out isRecycled);
     }
 
     public static Node SpawnObject(PackedScene packedScene, Node parent) {
@@ -101,18 +125,12 @@ public partial class PoolManager : Singleton<PoolManager>
         return Instance.SpawnObj(packedScene, parent, position, rotation, out isRecycled);
     }
 
-    public static bool ReleaseObject(Node clone) {
-        if (!closingGame)
-            return Instance.ReleaseObj(clone);
-        return false;
+    public static Node SpawnObject(PackedScene packedScene, Node parent, Vector3 position, Vector3 rotation) {
+        return SpawnObject(packedScene, parent, position, rotation, out bool _);
     }
 
-    public static bool AddObject(Node clone) {
-        return Instance.AddObj(clone);
-    }
-
-    public static Node GetObject(PackedScene packedScene, out bool isRecycled) {
-        return Instance.GetObj(packedScene, out isRecycled);
+    public static Node SpawnObject(PackedScene packedScene, Node parent, Vector3 position, Vector3 rotation, out bool isRecycled) {
+        return Instance.SpawnObj(packedScene, parent, position, rotation, out isRecycled);
     }
 
     #endregion
