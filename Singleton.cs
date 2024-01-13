@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-namespace Lambchomp.Essentials;
+namespace Lambchomp.GDPool;
 
 public partial class Singleton<T> : Node where T : Singleton<T>
 {

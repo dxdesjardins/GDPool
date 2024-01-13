@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Lambchomp.Essentials;
+namespace Lambchomp.Pool;
 
 public static class ExtensionsNode
 {

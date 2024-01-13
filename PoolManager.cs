@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-namespace Lambchomp.Essentials;
+namespace Lambchomp.Pool;
 
 public partial class PoolManager : Singleton<PoolManager>
 {
