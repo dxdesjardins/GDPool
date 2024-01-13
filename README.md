@@ -1,28 +1,42 @@
 GDPool
 =================
+Object Pool implementation for the Godot Game Engine.
 
-Object Pool Manager for the Godot Game Engine.
-
-Reimplemented and improved upon upon from a Unity Engine MIT Project:
-
-https://github.com/thefuntastic/unity-object-pool
-
+Overview
+----
 An object pool provides an efficient way to reuse objects, and thus keep the memory foot print of all dynamically created objects within fixed bounds. This is crucial for maintianing consistent framerates in realtime games (especially on mobile), as frequent garbage collection spikes would likley lead to inconsistent performance.
 
-Written for 2D games; slight modifications will be needed for 3D games.
+Usage
+----
+This project consists of:
 
+1. A PoolManager Singleton Class that allows you to easily pool scene objects. The Singleton will be automatically instantiated and added to the root node of the project if it does not exist when called.
+
+2. A ReturnToPool Node Class that must be a child of root in the scene being pooled.
+
+3. A generic object pool collection that can be used for non Godot objects.
+
+Use Examples
+----
 ```csharp
-// Initialize a pool of ten sceneObjects. The pool will have a maximum size of 15 objects (setting a max pool size is optional).
-// If a PoolManager node does not exist in the SceneTree, one will be created and added to the root node automatically.
+// Initialize a pool of ten sceneObjects. The pool will have a maximum size of 15 objects (setting a max size is optional).
 PoolManager.WarmObjects(packedSceneObject, 10, 15);
 
-// Simple example of spawning a Pool Object at GlobalPosition (0,0) with a rotation of 0 Radians.
-PoolManager.SpawnObject(packedSceneObject, someParentNode, Vector2.Zero, 0f, out bool isRecycled);
+// Spawning a Pool Object at GlobalPosition (0,0) with a rotation of 0 Radians.
+PoolManager.SpawnObject(packedSceneObject, someParentNode, Vector2.Zero, 0f);
 
-// Example of configuring a Pool Object's custom component before adding it to the SceneTree.
-Node2D scene = PoolManager.GetObject(packedSceneObject, out bool isRecycled) as Node2D;
-Component component = scene.GetChild<Component>();
-component.Configure(/* Do configuration of your custom component here */);
-someParentNode.AddChild(scene);
-
+// Configuring a Pool Scene child component before adding it to the SceneTree.
+Node2D poolScene = PoolManager.GetObject(packedSceneObject, out bool isRecycled) as Node2D;
+Component component = poolScene.GetChild<Component>();
+component.Configure(/* Do configuration of your custom script component here */);
+someParentNode.AddChild(poolScene);
 ```
+
+History
+----
+This project is inspired by and a reimplementation of a Unity Engine Object Pool by:
+https://github.com/thefuntastic
+
+Licence
+---
+MIT
