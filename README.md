@@ -12,7 +12,7 @@ This project consists of:
 
 1. A PoolManager Singleton Class that allows you to easily pool scene objects. The Singleton will be automatically instantiated and added to the root node of the project if it does not exist when called.
 
-2. A ReturnToPool Node Class that must be a child of root in the scene being pooled.
+2. A ReturnToPool Node Class that must be a child of the root in the scene being pooled.
 
 3. A generic object pool collection that can be used for non Godot objects.
 
