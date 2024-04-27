@@ -8,17 +8,17 @@ An object pool provides an efficient way to reuse objects, and thus keep the mem
 
 Setup
 ----
-No setup is required. A PoolManager Instance will automatically be created and added to the scene if called and one did not exist. You may optionally choose to add the PoolManager Class as an Autoload (recommended).
+No setup is required. A PoolManager instance will automatically be created and added to the scene if called and one did not exist. You may optionally choose to add the PoolManager class as an Autoload (recommended).
 
 Usage
 ----
 This project consists of:
 
-1. A PoolManager Singleton Class that allows you to easily pool scene objects. The Singleton will be automatically instantiated and added to the root node of the project if it does not exist when called.
+1. A PoolManager Singleton class that allows you to easily pool scene objects. The Singleton will be automatically instantiated and added to the root node of the project if it does not exist when called.
 
 2. A generic ObjectPool class that can be used for non-Godot objects.
 
-3. A ReturnToPool Node Class that will be added as a child of the scene being pooled.
+3. A ReturnToPool Node class that will be added as a child of the scene being pooled.
 
 When a pooled object is instantiated, a ReturnToPool child component will be automatically added to it. This component will ensure that the object is returned back to the pool after being removed from the scene tree or during OnReturnObjectsToPool.Invoke()
 
@@ -45,7 +45,7 @@ PoolManager.Instance.OnReturnObjectsToPool.Invoke();
 
 Background
 ---
-This Pool Pool is a standalone version with slight modifications to make it function independantly from my larger GDEssentials repository.
+This Object Pool is a standalone version with slight modifications to make it function independantly from my larger GDEssentials repository.
 
 Licence
 ---
