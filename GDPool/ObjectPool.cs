@@ -57,8 +57,10 @@ public class ObjectPool<T> where T : class
             }
         }
         if (container == null) {
-            if (list.Count < maxSize || maxSize == -1)
+            if (list.Count < maxSize || maxSize == -1) {
+                isRecycled = true;
                 container = CreateConatiner();
+            }
             else
                 return factoryFunc();
         }
@@ -69,7 +71,7 @@ public class ObjectPool<T> where T : class
 
     public void AddItem(T item) {
         if (lookup.ContainsKey(item))
-            GD.PrintErr("This object pool already contains the item provided: " + item);
+            GD.PrintErr("Object pool add failed: This object pool already contains the item provided: " + item);
         else if (maxSize == -1 || list.Count < maxSize) {
             var container = CreateConatiner();
             container.Item = item;
@@ -87,6 +89,6 @@ public class ObjectPool<T> where T : class
             lookup.Remove(item);
         }
         else
-            GD.PrintErr("This object pool does not contain the item provided: " + item);
+            GD.PrintErr("Object pool release failed: This object pool does not contain the item provided: ", item);
     }
 }

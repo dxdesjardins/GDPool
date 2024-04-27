@@ -36,4 +36,8 @@ public static class ExtensionsNode
             node = node.GetParent();
         return node;
     }
+
+    public static void RemoveParent(this Node node) {
+        node.GetParent().GetParent()?.RemoveChild(node.GetParent());
+    }
 }
