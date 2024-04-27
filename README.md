@@ -27,7 +27,8 @@ Freeing a pooled object (via Free or QueueFree) will cause errors. Call OnReturn
 Use Examples
 ----
 ```csharp
-// Initialize a pool of ten sceneObjects. The pool will have a maximum size of 15 objects (setting a max size is optional).
+// Initialize a pool of ten sceneObjects. The pool will have a maximum size of 15 objects.
+// (Setting a max size is optional)
 PoolManager.Instance.WarmObjects(packedSceneObject, 10, 15);
 
 // Spawning a Pool Object at GlobalPosition (0,0) with a rotation of 0 Radians.
@@ -39,7 +40,8 @@ Component component = poolScene.GetChild<Component>();
 component.Configure(/* Do configuration of your custom script component here */);
 someParentNode.AddChild(poolScene);
 
-// Removing all pooled objects from the SceneTree and returning them to their Object Pools (Ex: useful before QueueFreeing a Scene)
+// Removing all pooled objects from the SceneTree and returning them to their Object Pools.
+// (Ex: useful before QueueFreeing a Scene)
 PoolManager.Instance.OnReturnObjectsToPool.Invoke();
 ```
 
