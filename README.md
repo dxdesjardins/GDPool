@@ -28,14 +28,14 @@ Use Examples
 ----
 ```csharp
 // Initialize a pool of ten sceneObjects. The pool will have a maximum size of 15 objects.
-// (Setting a max size is optional)
+// (Setting a max size is optional. If not specified, the pool size will grow when needed)
 PoolManager.Instance.WarmObjects(packedSceneObject, 10, 15);
 
 // Spawning a Pool Object at GlobalPosition (0,0) with a rotation of 0 Radians.
 PoolManager.Instance.SpawnObject(packedSceneObject, someParentNode, Vector2.Zero, 0f);
 
 // Configuring a Pool Scene child component before adding it to the SceneTree.
-Node2D poolScene = PoolManager.Instance.GetObject(packedSceneObject, out bool isRecycled) as Node2D;
+Node2D poolScene = PoolManager.Instance.GetObject(packedSceneObject) as Node2D;
 Component component = poolScene.GetChild<Component>();
 component.Configure(/* Do configuration of your custom script component here */);
 someParentNode.AddChild(poolScene);
@@ -43,6 +43,9 @@ someParentNode.AddChild(poolScene);
 // Removing all pooled objects from the SceneTree and returning them to their Object Pools.
 // (Useful before QueueFreeing a Scene)
 PoolManager.Instance.OnReturnObjectsToPool.Invoke();
+
+// Printing debug info on the size and utilization of all pools.
+PoolManager.Instance.PrintStatus();
 ```
 
 Background
