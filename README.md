@@ -41,7 +41,7 @@ component.Configure(/* Do configuration of your custom script component here */)
 someParentNode.AddChild(poolScene);
 
 // Removing all pooled objects from the SceneTree and returning them to their Object Pools.
-// (Ex: useful before QueueFreeing a Scene)
+// (Useful before QueueFreeing a Scene)
 PoolManager.Instance.OnReturnObjectsToPool.Invoke();
 ```
 
