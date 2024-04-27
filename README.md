@@ -22,7 +22,7 @@ This project consists of:
 
 When a pooled object is instantiated, a ReturnToPool child component will be automatically added to it. This component will ensure that the object is returned back to the pool after being removed from the scene tree or during OnReturnObjectsToPool.Invoke()
 
-Freeing a pooled object (via Free or QueueFree) will cause errors. Call OnReturnObjectsToPool.Invoke() before freeing a scene to prevent this error.
+Freeing a pooled object (via Free or QueueFree) will cause errors. Call OnReturnObjectsToPool.Invoke() before freeing a scene to prevent errors.
 
 Use Examples
 ----
