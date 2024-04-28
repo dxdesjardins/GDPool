@@ -8,7 +8,7 @@ An object pool provides an efficient way to reuse objects, and thus keep the mem
 
 Setup
 ----
-No setup is required. A PoolManager instance will automatically be created and added to the scene if called and one did not exist. You may optionally choose to add the PoolManager class as an Autoload (recommended).
+No setup is required. A PoolManager instance will automatically be created and added to the tree if called and one did not exist. You may optionally choose to add the PoolManager class as an Autoload (recommended).
 
 Usage
 ----
