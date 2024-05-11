@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-namespace Chomp.Pool;
+namespace Lambchomp.Pool;
 
 public abstract partial class Singleton<T> : Node2D where T : Singleton<T>
 {
@@ -29,7 +29,7 @@ public abstract partial class Singleton<T> : Node2D where T : Singleton<T>
 
     protected static T CreateInstance() {
         Window root = (Engine.GetMainLoop() as SceneTree).Root;
-        GD.Print("Caution: Slowly searching for instance of: ", typeof(T).Name, ".");
+        GD.Print("Searching for instance of: ", typeof(T).Name);
         T[] singletons = addToTree ? root.GetComponentsInChildren<T>(false) : Array.Empty<T>();
         if (singletons.Length != 0) {
             if (singletons.Length == 1) {

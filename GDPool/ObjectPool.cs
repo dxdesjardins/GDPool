@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-namespace Chomp.Pool;
+namespace Lambchomp.Pool;
 
 public class ObjectPool<T> where T : class
 {
@@ -36,7 +36,7 @@ public class ObjectPool<T> where T : class
         return container;
     }
 
-    public T GetItem(out bool isRecycled, bool dontOverSpawn = true) {
+    public T GetItem(out bool isRecycled) {
         isRecycled = false;
         ObjectPoolContainer<T> container = null;
         for (int i = 0; i < list.Count; i++) {
@@ -57,19 +57,12 @@ public class ObjectPool<T> where T : class
             }
         }
         if (container == null) {
-            if (maxSize == -1 || list.Count < maxSize) {
+            if (list.Count < maxSize || maxSize == -1) {
                 isRecycled = true;
                 container = CreateConatiner();
             }
-            else if (dontOverSpawn) {
-                isRecycled = true;
-                return null;
-            }
-            else {
-                T item = factoryFunc();
-                GD.Print("Warning: Object Pool is at max size and no objects are available. Instancing non-pooled object: ", item);
-                return item;
-            }
+            else
+                return factoryFunc();
         }
         container.Consume();
         lookup.Add(container.Item, container);
@@ -83,8 +76,6 @@ public class ObjectPool<T> where T : class
             var container = CreateConatiner();
             container.Item = item;
         }
-        else
-            GD.Print("Warning: Object pool add failed because this object pool is at max size: ", item);
     }
 
     public void ReleaseItem(object item) {
