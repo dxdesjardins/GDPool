@@ -20,32 +20,32 @@ This project consists of:
 
 3. A ReturnToPool Node class that will be added as a child of the scene being pooled.
 
-When a pooled object is instantiated, a ReturnToPool child component will be automatically added to it. This component will ensure that the object is returned back to the pool after being removed from the scene tree or during OnReturnObjectsToPool.Invoke()
+When a pooled object is instantiated, a ReturnToPool child component will be automatically added to it. This component will ensure that the object is returned back to the pool after being removed from the scene tree or during ReturnObjectsToPool()
 
-Freeing a pooled object (via Free or QueueFree) will cause errors. Call OnReturnObjectsToPool.Invoke() before freeing a scene to prevent errors.
+Freeing a pooled object (via Free or QueueFree) will cause errors. Call ReturnObjectsToPool() before freeing a main game scene to prevent errors
 
 Use Examples
 ----
 ```csharp
 // Initialize a pool of ten sceneObjects. The pool will have a maximum size of 15 objects.
 // (Setting a max size is optional. If not specified, the pool size will grow when needed)
-PoolManager.Instance.WarmObjects(packedSceneObject, 10, 15);
+PoolManager.Warm(packedSceneObject, 10, 15);
 
 // Spawning a Pool Object at GlobalPosition (0,0) with a rotation of 0 Radians.
-PoolManager.Instance.SpawnObject(packedSceneObject, someParentNode, Vector2.Zero, 0f);
+PoolManager.Spawn(packedSceneObject, someParentNode);
 
 // Configuring a Pool Scene child component before adding it to the SceneTree.
-Node2D poolScene = PoolManager.Instance.GetObject(packedSceneObject) as Node2D;
+Node2D poolScene = PoolManager.GetObject(packedSceneObject) as Node2D;
 Component component = poolScene.GetChild<Component>();
 component.Configure(/* Do configuration of your custom script component here */);
 someParentNode.AddChild(poolScene);
 
 // Removing all pooled objects from the SceneTree and returning them to their Object Pools.
 // (Useful before QueueFreeing a Scene)
-PoolManager.Instance.OnReturnObjectsToPool.Invoke();
+PoolManager.ReturnObjectsToPool();
 
 // Printing debug info on the size and utilization of all pools.
-PoolManager.Instance.PrintStatus();
+PoolManager.PrintStatus();
 ```
 
 Background

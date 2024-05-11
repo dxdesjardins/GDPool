@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|c:\\users\\dxdes\\desktop\\repositories\\gdpool\\gdpool\\poolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|solutionrelative:gdpool\\poolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|c:\\users\\dxdes\\desktop\\repositories\\gdpool\\gdpool\\returntopool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|solutionrelative:gdpool\\returntopool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|c:\\users\\dxdes\\desktop\\repositories\\gdpool\\gdpool\\extensionsnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|solutionrelative:gdpool\\extensionsnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|c:\\users\\dxdes\\desktop\\repositories\\gdpool\\gdpool\\singleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|solutionrelative:gdpool\\singleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|c:\\users\\dxdes\\desktop\\repositories\\gdpool\\gdpool\\objectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|solutionrelative:gdpool\\objectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|c:\\users\\dxdes\\desktop\\repositories\\gdpool\\gdpool\\objectpoolcontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31736986-BEFB-4FEC-A9F7-81591FE594DA}|GDPool.csproj|solutionrelative:gdpool\\objectpoolcontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExtensionsNode.cs",
+              "DocumentMoniker": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\ExtensionsNode.cs",
+              "RelativeDocumentMoniker": "GDPool\\ExtensionsNode.cs",
+              "ToolTip": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\ExtensionsNode.cs",
+              "RelativeToolTip": "GDPool\\ExtensionsNode.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T01:43:50.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Singleton.cs",
+              "DocumentMoniker": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\Singleton.cs",
+              "RelativeDocumentMoniker": "GDPool\\Singleton.cs",
+              "ToolTip": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\Singleton.cs",
+              "RelativeToolTip": "GDPool\\Singleton.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T01:15:17.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReturnToPool.cs",
+              "DocumentMoniker": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\ReturnToPool.cs",
+              "RelativeDocumentMoniker": "GDPool\\ReturnToPool.cs",
+              "ToolTip": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\ReturnToPool.cs",
+              "RelativeToolTip": "GDPool\\ReturnToPool.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T01:15:16.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PoolManager.cs",
+              "DocumentMoniker": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\PoolManager.cs",
+              "RelativeDocumentMoniker": "GDPool\\PoolManager.cs",
+              "ToolTip": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\PoolManager.cs",
+              "RelativeToolTip": "GDPool\\PoolManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T01:15:15.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ObjectPoolContainer.cs",
+              "DocumentMoniker": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\ObjectPoolContainer.cs",
+              "RelativeDocumentMoniker": "GDPool\\ObjectPoolContainer.cs",
+              "ToolTip": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\ObjectPoolContainer.cs",
+              "RelativeToolTip": "GDPool\\ObjectPoolContainer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T01:15:03.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ObjectPool.cs",
+              "DocumentMoniker": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\ObjectPool.cs",
+              "RelativeDocumentMoniker": "GDPool\\ObjectPool.cs",
+              "ToolTip": "C:\\Users\\dxdes\\Desktop\\Repositories\\GDPool\\GDPool\\ObjectPool.cs",
+              "RelativeToolTip": "GDPool\\ObjectPool.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T01:15:01.421Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
