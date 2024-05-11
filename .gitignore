@@ -2,6 +2,4 @@
 .godot/
 GDPool.sln
 GDPool.csproj
-project.godot
-.vs/
-MainScene.tscn
+
