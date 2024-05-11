@@ -1,6 +1,6 @@
 GDPool
 =================
-Object Pooling implementation for the Godot Game Engine.
+Object Pooling System for the Godot Game Engine.
 
 Overview
 ----
