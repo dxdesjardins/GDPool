@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
-android/
+GDPool.sln
+GDPool.csproj
+project.godot
+.vs/
+MainScene.tscn

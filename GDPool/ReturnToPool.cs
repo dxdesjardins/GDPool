@@ -2,23 +2,22 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-namespace Chomp.Pool;
+namespace Lambchomp.Pool;
 
 public partial class ReturnToPool : Node
 {
     public override void _Notification(int what) {
         switch (what) {
             case (int)NotificationReady:
-                PoolManager.ReturnToPoolActions.Add(() => {
-                    this.RemoveParent(); });
+                PoolManager.Instance.OnReturnObjectsToPool += this.RemoveParent;
                 break;
             case (int)NotificationExitTree:
-                bool isPooled = PoolManager.ReleaseObject(this.GetParent());
+                bool isPooled = PoolManager.Instance.ReleaseObject(this.GetParent());
                 if (!isPooled)
-                    isPooled = PoolManager.AddObject(this.GetParent());
+                    isPooled = PoolManager.Instance.AddObject(this.GetParent());
                 break;
             case (int)NotificationPredelete:
-                if (PoolManager.IsPooledObject(this.GetParent()))
+                if (PoolManager.Instance.IsPooledObject(this.GetParent()))
                     GD.PrintErr("Warning: ", System.IO.Path.GetFileNameWithoutExtension(this.GetParent().SceneFilePath), " is being freed while part of an Object Pool.");
                 break;
         }
