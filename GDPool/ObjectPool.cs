@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using Chomp.Essentials;
 
 namespace Chomp.Pool;
 
@@ -67,7 +68,7 @@ public class ObjectPool<T> where T : class
             }
             else {
                 T item = factoryFunc();
-                GD.Print("Warning: Object Pool is at max size and no objects are available. Instancing non-pooled object: ", item);
+                GDE.Log($"Object Pool is at max size and no objects are available. Instancing non-pooled object({item.GetType().Name}).");
                 return item;
             }
         }
@@ -78,13 +79,13 @@ public class ObjectPool<T> where T : class
 
     public void AddItem(T item) {
         if (lookup.ContainsKey(item))
-            GD.PrintErr("Object pool add failed: This object pool already contains the item provided: " + item);
+            GDE.LogErr($"Object pool add object instance failed. This object pool already contains the object instance({item.GetType().Name}).");
         else if (maxSize == -1 || list.Count < maxSize) {
             var container = CreateConatiner();
             container.Item = item;
         }
         else
-            GD.Print("Warning: Object pool add failed because this object pool is at max size: ", item);
+            GDE.Log($"Object pool add object instance ignored. This pool({item.GetType().Name}) is at max size.");
     }
 
     public void ReleaseItem(object item) {
@@ -98,6 +99,6 @@ public class ObjectPool<T> where T : class
             lookup.Remove(item);
         }
         else
-            GD.PrintErr("Object pool release failed: This object pool does not contain the item provided: ", item);
+            GDE.LogErr($"Object pool release object instance failed. This pool does not contain the object instance({item.GetType().Name}).");
     }
 }
