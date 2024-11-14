@@ -18,7 +18,7 @@ Requirements
 2. .NET 8+
 3. Install my GDEssentials repository and follow the setup instructions to use my StageManager.
 
-Use Examples
+Usage
 ----
 ```csharp
 // Initialize a pool of ten scenes. The pool will have a maximum size of 15 scenes.
