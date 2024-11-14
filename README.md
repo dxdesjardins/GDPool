@@ -28,8 +28,8 @@ PoolManager.WarmPool(packedScene, 10, 15);
 
 // Examples of spawning a Pooled Scene.
 PoolManager.Spawn(packedScene, parentNode);
-PoolManager.Spawn(stringUid, parentNode);
-PoolManager.Spawn(longUid, parentNode);
+PoolManager.Spawn(stringPackedSceneUid, parentNode);
+PoolManager.Spawn(longPackedSceneUid, parentNode);
 PoolManager.Spawn(packedScene, parentNode);
 PoolManager.Spawn(packedScene, parentNode, vector2Position, floatRotation, out isRecycled, dontOverSpawn = true);
 PoolManager.Spawn(packedScene, parentNode, vector3Position, Vector3Rotation, out isRecycled, dontOverSpawn = true);
