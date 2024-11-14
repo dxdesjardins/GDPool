@@ -37,7 +37,7 @@ PoolManager.Spawn(packedScene, parentNode, transform2D, out isRecycled, dontOver
 PoolManager.Spawn(packedScene, parentNode, transform3D, out isRecycled, dontOverSpawn = true);
 
 // Configuring a Pooled Scene child component before adding the scene to the tree.
-Node2D pooledScene = PoolManager.GetObject(packedScene) as Node2D;
+Node pooledScene = PoolManager.GetObject(packedScene);
 Component component = poolScene.GetComponent<Component>();
 component.Configure(/* Do configuration of your custom script component here */);
 parentNode.AddChild(pooledScene);
