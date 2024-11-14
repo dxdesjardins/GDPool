@@ -19,18 +19,18 @@ public partial class PoolManager : NodeSingleton<PoolManager>
     }
     private static Dictionary<PackedScene, ObjectPool<Node>> packedLookup = new();
     private static Dictionary<Node, ObjectPool<Node>> instanceLookup = new();
-    public static NodeEvent ReturnObjectsToPoolEvent { get; set; } = new();
+    public static NodeEvent ReturnObjectsToPool { get; set; } = new();
 
     public override void _EnterTree() {
         RequestReady();
     }
 
     public override void _Ready() {
-        StageManager.StageUnloading += ReturnObjectsToPoolEvent.Invoke;
+        StageManager.StageUnloading += ReturnObjectsToPool.Invoke;
     }
 
     public override void _ExitTree() {
-        StageManager.StageUnloading -= ReturnObjectsToPoolEvent.Invoke;
+        StageManager.StageUnloading -= ReturnObjectsToPool.Invoke;
     }
 
     public static void WarmPool(PackedScene packedScene, int size, int maxSize = -1) {

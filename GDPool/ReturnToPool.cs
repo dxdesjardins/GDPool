@@ -10,7 +10,7 @@ public partial class ReturnToPool : Node
     private Node stage;
 
     public ReturnToPool() {
-        PoolManager.ReturnObjectsToPoolEvent.AddListener((node) => {
+        PoolManager.ReturnObjectsToPool.AddListener((node) => {
             if (this.IsInsideTree() && node == stage)
                 this.RemoveParent();
         });
