@@ -144,7 +144,7 @@ public partial class PoolManager : NodeSingleton<PoolManager>
 
     public static void PrintStatus() {
         foreach (KeyValuePair<PackedScene, ObjectPool<Node>> keyVal in packedLookup)
-            GDE.Log($"Object Pool for Scene: {System.IO.Path.GetFileNameWithoutExtension(keyVal.Key.ResourcePath)} | In Use: {keyVal.Value.CountUsedItems} | Total {keyVal.Value.Count}");
+            GDE.Log($"Object Pool for Scene: {System.IO.Path.GetFileNameWithoutExtension(keyVal.Key.ResourcePath)} | In Use: {keyVal.Value.CountUsedItems} | Total: {keyVal.Value.Count} | Max Size: {(keyVal.Value.MaxSize == -1 ? "Infinite" : keyVal.Value.MaxSize)}");
     }
 
     public static Node Spawn(PackedScene packedScene, Node parent, bool dontOverSpawn = true) => SpawnObject(packedScene, parent, Vector2.Zero, 0, Vector2.One, out _, dontOverSpawn);

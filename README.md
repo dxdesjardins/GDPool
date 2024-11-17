@@ -6,6 +6,10 @@ Overview
 ----
 An object pool improves performance by reusing a set of objects rather than frequently allocating and deallocating memory for new ones. This is crucial for maintianing consistent framerate in games.
 
+<div style="margin-left: 1em;">
+<img src="Docs/PrintStatus.png" width="800px" style="vertical-align:middle;">
+</div>
+
 Core Features
 ----
 1. A PoolManager Singleton class that allows you to easily pool scene objects. The Singleton will be automatically instantiated and added to the root node of the game if it does not exist when called. You may optionally set the PoolManager to be an autoload.

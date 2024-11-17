@@ -11,11 +11,10 @@ public class ObjectPool<T> where T : class
     private Dictionary<T, ObjectPoolContainer<T>> lookup;
     private Func<T> factoryFunc;
     private int lastIndex = 0;
-    private int maxSize = -1;
+    public int MaxSize { get; private set; } = -1;
 
     public int Count => list.Count;
     public int CountUsedItems => lookup.Count;
-    public int MaxSize => maxSize;
 
     public ObjectPool(Func<T> factoryFunc, int initialSize, int maxSize = -1) {
         this.factoryFunc = factoryFunc;
@@ -25,7 +24,7 @@ public class ObjectPool<T> where T : class
     }
 
     private void Warm(int amount, int maxSize = -1) {
-        this.maxSize = maxSize;
+        this.MaxSize = maxSize;
         for (int i = 0; i < amount; i++)
             CreateConatiner();
     }
@@ -58,7 +57,7 @@ public class ObjectPool<T> where T : class
             }
         }
         if (container == null) {
-            if (maxSize == -1 || list.Count < maxSize) {
+            if (MaxSize == -1 || list.Count < MaxSize) {
                 isRecycled = true;
                 container = CreateConatiner();
             }
@@ -80,7 +79,7 @@ public class ObjectPool<T> where T : class
     public void AddItem(T item) {
         if (lookup.ContainsKey(item))
             GDE.LogErr($"Object pool add object instance failed. This object pool already contains the object instance({item.GetType().Name}).");
-        else if (maxSize == -1 || list.Count < maxSize) {
+        else if (MaxSize == -1 || list.Count < MaxSize) {
             var container = CreateConatiner();
             container.Item = item;
         }
