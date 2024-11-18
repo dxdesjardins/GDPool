@@ -4,7 +4,7 @@ Object Pooling System for the Godot Game Engine.
 
 Overview
 ----
-An object pool improves performance by reusing a set of objects rather than frequently allocating and deallocating memory for new ones. This is essential for maintianing a consistent framerate in games.
+An object pool improves performance by reusing a set of objects rather than allocating and deallocating memory for new ones. This is essential for maintianing a consistent framerate in games.
 
 <div style="margin-left: 1em;">
 <img src="Docs/PrintStatus.png" width="600px" style="vertical-align:middle;">
