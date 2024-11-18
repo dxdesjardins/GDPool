@@ -1,13 +1,13 @@
 GDPool
 =================
-Scene Pooling System for the Godot Game Engine.
+Object Pooling System for the Godot Game Engine.
 
 Overview
 ----
 An object pool improves performance by reusing a set of objects rather than frequently allocating and deallocating memory for new ones. This is crucial for maintianing consistent framerate in games.
 
 <div style="margin-left: 1em;">
-<img src="Docs/PrintStatus.png" width="800px" style="vertical-align:middle;">
+<img src="Docs/PrintStatus.png" width="700px" style="vertical-align:middle;">
 </div>
 
 Core Features
