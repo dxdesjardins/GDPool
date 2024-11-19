@@ -35,10 +35,10 @@ PoolManager.Spawn(packedScene, parentNode);
 PoolManager.Spawn(stringPackedSceneUid, parentNode);
 PoolManager.Spawn(longPackedSceneUid, parentNode);
 PoolManager.Spawn(packedScene, parentNode);
-PoolManager.Spawn(packedScene, parentNode, vector2Position, floatRotation, out isRecycled, dontOverSpawn = true);
-PoolManager.Spawn(packedScene, parentNode, vector3Position, Vector3Rotation, out isRecycled, dontOverSpawn = true);
-PoolManager.Spawn(packedScene, parentNode, transform2D, out isRecycled, dontOverSpawn = true);
-PoolManager.Spawn(packedScene, parentNode, transform3D, out isRecycled, dontOverSpawn = true);
+PoolManager.Spawn(packedScene, parentNode, vector2Position, floatRotation, out isRecycled, dontOverSpawn : true);
+PoolManager.Spawn(packedScene, parentNode, vector3Position, Vector3Rotation, out isRecycled, dontOverSpawn : true);
+PoolManager.Spawn(packedScene, parentNode, transform2D, out isRecycled, dontOverSpawn : true);
+PoolManager.Spawn(packedScene, parentNode, transform3D, out isRecycled, dontOverSpawn : true);
 
 // Configuring a Pooled Scene child component before adding the scene to the tree.
 Node pooledScene = PoolManager.GetObject(packedScene);
