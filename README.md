@@ -7,7 +7,7 @@ Overview
 An object pool improves performance by reusing a set of objects rather than allocating and deallocating memory for new ones. This is essential for maintianing a consistent framerate in games.
 
 <div style="margin-left: 1em;">
-<img src="Docs/PrintStatus.png" width="650px" style="vertical-align:middle;">
+<img src="Docs/PrintStatus.png" style="vertical-align:middle;">
 </div>
 
 Core Features
