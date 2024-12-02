@@ -1,5 +1,3 @@
-#define GDPOOL
-
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -39,8 +37,7 @@ public partial class PoolManager : NodeSingleton<PoolManager>
         ObjectPool<Node> pool = new(() => {
             Node instance = packedScene.Instantiate<Node>();
             instance.SetUniqueName();
-            var returnComponent = Activator.CreateInstance(typeof(ReturnToPool)) as ReturnToPool;
-            instance.AddChild(returnComponent);
+            instance.InstantiateChild<ReturnToPool>();
             return instance;
         }, size, maxSize);
         packedLookup[packedScene] = pool;
