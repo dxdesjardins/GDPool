@@ -1,13 +1,13 @@
 GDPool
 =================
-Scene Pooling System for the Godot Game Engine.
+Object Pooling System for the Godot Game Engine.
 
 Overview
 ----
-An object pool improves performance by reusing a set of objects rather than frequently allocating and deallocating memory for new ones. This is crucial for maintianing consistent framerate in games.
+An object pool improves performance by reusing a set of objects rather than allocating and deallocating memory for new ones. This is essential for maintianing a consistent framerate in games.
 
 <div style="margin-left: 1em;">
-<img src="Docs/PrintStatus.png" width="800px" style="vertical-align:middle;">
+<img src="Docs/PrintStatus.png" style="vertical-align:middle;">
 </div>
 
 Core Features
@@ -35,15 +35,14 @@ PoolManager.Spawn(packedScene, parentNode);
 PoolManager.Spawn(stringPackedSceneUid, parentNode);
 PoolManager.Spawn(longPackedSceneUid, parentNode);
 PoolManager.Spawn(packedScene, parentNode);
-PoolManager.Spawn(packedScene, parentNode, vector2Position, floatRotation, out isRecycled, dontOverSpawn = true);
-PoolManager.Spawn(packedScene, parentNode, vector3Position, Vector3Rotation, out isRecycled, dontOverSpawn = true);
-PoolManager.Spawn(packedScene, parentNode, transform2D, out isRecycled, dontOverSpawn = true);
-PoolManager.Spawn(packedScene, parentNode, transform3D, out isRecycled, dontOverSpawn = true);
+PoolManager.Spawn(packedScene, parentNode, vector2Position, floatRotation, out isRecycled, dontOverSpawn : true);
+PoolManager.Spawn(packedScene, parentNode, vector3Position, Vector3Rotation, out isRecycled, dontOverSpawn : true);
+PoolManager.Spawn(packedScene, parentNode, transform2D, out isRecycled, dontOverSpawn : true);
+PoolManager.Spawn(packedScene, parentNode, transform3D, out isRecycled, dontOverSpawn : true);
 
 // Configuring a Pooled Scene child component before adding the scene to the tree.
 Node pooledScene = PoolManager.GetObject(packedScene);
-Component component = poolScene.GetComponent<Component>();
-component.Configure(/* Do configuration of your custom script component here */);
+poolScene.GetComponent<Component>().Configure(/* Do configuration of your custom script component here */);
 parentNode.AddChild(pooledScene);
 
 // Manually removing all pooled scenes from a specified Stage and returning them to their Object Pools.
